@@ -1,0 +1,7 @@
+class Solution:
+    def climbStairs(self, n: int, memo=dict({"1": 1, "2": 2})) -> int:
+        if str(n) in memo:
+            return memo[str(n)]
+        else:
+            memo[str(n)] = self.climbStairs(n - 1, memo) + self.climbStairs(n - 2, memo)
+            return memo[str(n)]
